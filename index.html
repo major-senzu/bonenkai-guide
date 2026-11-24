@@ -19,6 +19,22 @@
 .arrival-name{overflow-wrap:anywhere}
 .arrival-label{color:var(--muted);font-size:12px;white-space:nowrap}
 @media(max-width:600px){.arrival-card .search{font-size:16px}.arrival-row{padding-inline:5px;gap:10px}}
+
+.seating-overview{margin:-5px 0 16px;display:flex;gap:8px 12px;flex-wrap:wrap;align-items:center}
+.seating-overview .small{margin:0}
+.seating-tables{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.seating-table{min-width:0}
+.seating-table-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px}
+.seating-table-title h3{margin:0;font-size:20px}
+.seat-grid{display:grid;grid-template-columns:minmax(0,1fr) 12px minmax(0,1fr);gap:8px;list-style:none;margin:0;padding:0}
+.seat-grid::before{content:"";grid-column:2;grid-row:1 / span var(--seat-rows);border-radius:8px;border:1px solid #a9b7a7;background:#d7e2d1}
+.seat-grid li{display:flex;flex-direction:column;justify-content:center;gap:2px;min-width:0;min-height:58px;border:1px solid var(--line);border-radius:9px;background:#f6f7ef;padding:7px 8px;font-size:14px;line-height:1.35;overflow-wrap:anywhere}
+.seat-grid li:nth-child(odd){grid-column:1}
+.seat-grid li:nth-child(even){grid-column:3}
+.seat-grid .seat-code{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--muted)}
+.seat-grid .seat-empty{border-style:dashed;background:#fffdf8;color:var(--muted)}
+@media(max-width:720px){.seating-tables{grid-template-columns:1fr;gap:12px}}
+@media(max-width:350px){.seat-grid{grid-template-columns:minmax(0,1fr) 9px minmax(0,1fr);gap:6px}.seat-grid li{font-size:13px;padding-inline:6px}}
 </style></head>
 <body><header><div class="brand"><img class="brand-logo" src="assets/wanderlust-logo.webp" width="600" height="159" alt="Wanderlust"><span class="brand-caption">YEAR-END GATHERING<span>2026</span></span></div><span class="badge">当日のご案内</span></header>
 <div class="hero"><div><div class="eyebrow">WANDERLUST · YEAR-END GATHERING</div><h1>今年の締めくくりを、<br>みんなで。</h1><p>Wanderlust 2026 忘年会のしおり<br>忘年会の日時・会場と、食事のあとのご案内。</p></div><div class="stamp" aria-hidden="true"><div class="stamp-content"><img class="stamp-logo" src="assets/wanderlust-logo.webp" width="600" height="159" alt=""><span class="stamp-year">2026</span><span class="stamp-title">忘年会のしおり</span></div></div></div>
@@ -93,7 +109,51 @@
 </section>
 <section id="seats">
   <div class="section-title"><span class="num">04</span><h2>座席マップ</h2></div>
-  <div class="card"><span class="tag">準備中</span><p>座席の詳細は、決まり次第ご案内します。</p></div>
+  <div class="seating-overview">
+    <span class="tag">仮案</span>
+    <span class="small">17名・18席（空席1）</span>
+    <p class="small">卓配置はイメージです。卓の位置や向きは実際の会場と異なります。</p>
+  </div>
+  <div class="seating-tables">
+    <article class="card seating-table" aria-labelledby="table-A">
+      <div class="seating-table-title"><h3 id="table-A">A卓</h3><span class="tag">4席</span></div>
+      <ol class="seat-grid" style="--seat-rows:2" aria-label="A卓の座席">
+        <li><span class="seat-code">A1</span><span class="seat-name">Kyo Nishikawa</span></li>
+        <li><span class="seat-code">A2</span><span class="seat-name">Aya Hatano</span></li>
+        <li><span class="seat-code">A3</span><span class="seat-name">Tasuku Sasaki</span></li>
+        <li><span class="seat-code">A4</span><span class="seat-name">Ryuta Hoshino</span></li>
+      </ol>
+    </article>
+    <article class="card seating-table" aria-labelledby="table-B">
+      <div class="seating-table-title"><h3 id="table-B">B卓</h3><span class="tag">4席</span></div>
+      <ol class="seat-grid" style="--seat-rows:2" aria-label="B卓の座席">
+        <li><span class="seat-code">B1</span><span class="seat-name">Shogo Kubota</span></li>
+        <li><span class="seat-code">B2</span><span class="seat-name">jo nakagawa</span></li>
+        <li><span class="seat-code">B3</span><span class="seat-name">Koki Koshikawa</span></li>
+        <li><span class="seat-code">B4</span><span class="seat-name">Yuya Hashimoto</span></li>
+      </ol>
+    </article>
+    <article class="card seating-table" aria-labelledby="table-C">
+      <div class="seating-table-title"><h3 id="table-C">C卓</h3><span class="tag">4席</span></div>
+      <ol class="seat-grid" style="--seat-rows:2" aria-label="C卓の座席">
+        <li><span class="seat-code">C1</span><span class="seat-name">Issei Mori</span></li>
+        <li><span class="seat-code">C2</span><span class="seat-name">Kentaro Suzuki（鈴木健太郎）</span></li>
+        <li><span class="seat-code">C3</span><span class="seat-name">Shoki Konno</span></li>
+        <li><span class="seat-code">C4</span><span class="seat-name">Haruto Nakagawa</span></li>
+      </ol>
+    </article>
+    <article class="card seating-table" aria-labelledby="table-D">
+      <div class="seating-table-title"><h3 id="table-D">D卓</h3><span class="tag">6席</span></div>
+      <ol class="seat-grid" style="--seat-rows:3" aria-label="D卓の座席">
+        <li><span class="seat-code">D1</span><span class="seat-name">Shota Ueyama（植山翔太）</span></li>
+        <li><span class="seat-code">D2</span><span class="seat-name">Yusuke Iino</span></li>
+        <li><span class="seat-code">D3</span><span class="seat-name">Sayomi Kawasoe</span></li>
+        <li><span class="seat-code">D4</span><span class="seat-name">Kentaro Okada</span></li>
+        <li><span class="seat-code">D5</span><span class="seat-name">Takuho Miyata</span></li>
+        <li class="seat-empty"><span class="seat-code">D6</span><span class="seat-name">空席</span></li>
+      </ol>
+    </article>
+  </div>
 </section>
 </main>
 <footer class="foot">Wanderlust · 2026 忘年会のしおり<br>更新日：2026年11月24日</footer>
